@@ -11,7 +11,7 @@ out of luck – can you even buy the original mounting bracket?
 Adding a standard SATA SSD or HDD is easy enough but holding it firmly in
 place is a problem w/o the bracket. There are many hacks out there using cable
 ties, nylon string or cardboard to keep the newly added disk in place. I liked
-non of them. There already is at least one 3D printable design for a suitable
+none of them. There already is at least one 3D printable design for a suitable
 bracket out there but I think it is hard to print without support and so I
 designed my own version.
 

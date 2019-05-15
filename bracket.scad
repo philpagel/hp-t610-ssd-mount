@@ -16,6 +16,7 @@ spacer_diam = 6.0;
 // mounting screws
 screwdist = 61.71;
 screwdiam = 3.1;
+footdist = 50;
 
 module baseplate() {
     union() {
@@ -24,17 +25,19 @@ module baseplate() {
             cube([	tray_width, tray_length, baseplate_height]);
             cylinder(h=baseplate_height, d=55);
             translate([tray_width, 0, 0]){
-                cylinder(h=baseplate_height, d=55);
+                scale([63/55, 1, 1]){
+                    cylinder(h=baseplate_height, d=55);
+                }
             }
         }
         // spacers
-        translate([(tray_width-screwdist)/2, 42, 0]){
+        translate([(tray_width-footdist)/2, 42, 0]){
             spacer();
-            translate([screwdist, 0, 0]){
+            translate([footdist, 0, 0]){
                 spacer();
             };
         };
-        translate([tray_width/2, spacer_diam/2, 0]){
+        translate([tray_width/2 - 2 , spacer_diam/2 + 2 , 0]){
             spacer();
         }
     }
@@ -51,7 +54,7 @@ module hole () {
 difference(){
     baseplate();
     translate([0, spacer_diam/2, 0]){
-        translate([tray_width/2, 0, 0]){
+        translate([tray_width/2 - 2 , 2, 0]){
             hole();
         };
         translate([(tray_width-screwdist)/2, 30, 0]){
